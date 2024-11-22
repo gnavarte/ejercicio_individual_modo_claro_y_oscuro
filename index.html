@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Claro y Oscuro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light text-dark">
+
+    <!-- Menú -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Mi Página</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button id="light-mode" class="btn btn-light mx-1">Modo Claro</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="dark-mode" class="btn btn-dark mx-1">Modo Oscuro</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Bienvenidos a mi Página</h1>
+        <div class="text-center mb-4">
+            <img src="https://st2.depositphotos.com/1017986/7580/i/450/depositphotos_75807593-stock-photo-happy-male-friends-drinking-beer.jpg" class="img-fluid rounded shadow" alt="Imagen de Ejemplo">
+        </div>
+
+        <h2 class="mb-3">Tabla de Ejemplo</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Juan</td>
+                    <td>Pérez</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>María</td>
+                    <td>López</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Carlos</td>
+                    <td>Gómez</td>
+                    <td>40</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        $(document).ready(function() {
+            // Cambiar a modo claro
+            $("#light-mode").click(function() {
+                $("body").removeClass("bg-dark text-white").addClass("bg-light text-dark");
+                $(".navbar").removeClass("navbar-dark bg-dark").addClass("navbar-light bg-primary");
+            });
+
+            // Cambiar a modo oscuro
+            $("#dark-mode").click(function() {
+                $("body").removeClass("bg-light text-dark").addClass("bg-dark text-white");
+                $(".navbar").removeClass("navbar-light bg-primary").addClass("navbar-dark bg-dark");
+            });
+        });
+    </script>
+</body>
+</html>
